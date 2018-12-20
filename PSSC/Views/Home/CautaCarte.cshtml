@@ -1,0 +1,49 @@
+﻿@model PSSC.Models.CarteMVC
+@{
+    ViewData["Title"] = "CautaCarte";
+}
+
+<h2>Cautare carte</h2>
+<br />
+<br />
+
+
+@using (Html.BeginForm("CautaCarte", "Home", FormMethod.Post, new { @class = "linkStyle", mVC = @Model }))
+{
+    <div>
+        <fieldset>
+            <div class="editor-label">
+                @Html.LabelFor(p => p.Titlu)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(p => p.Titlu)
+                <input type="submit" value="Cautare" />
+            </div>
+            
+        </fieldset>
+    </div>
+}
+
+<br />
+<br />
+
+
+
+
+@using (Html.BeginForm("ImprumutaCarte", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Imprumuta carte">
+}
+<br />
+
+@using (Html.BeginForm("RestituieCarte", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Restituie carte">
+}
+<br />
+
+@using (Html.BeginForm("PrlungireTermen", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Prelungire termen">
+}
+<br />

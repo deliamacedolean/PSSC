@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "PaginaPrincipala";
+}
+
+<h2>Biblioteca</h2>
+<br />
+<br />
+
+@using (Html.BeginForm("CautaCarte", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Cauta carte">
+}
+<br />
+
+@using (Html.BeginForm("AfisareCartiUser", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Afisare carti user">
+}
+<br />
+
+
+
+

@@ -1,0 +1,2 @@
+﻿111 parola1
+222 parola2

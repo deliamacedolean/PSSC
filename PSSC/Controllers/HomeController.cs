@@ -12,26 +12,23 @@ namespace PSSC.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            //return View("Login");
+             return View("PaginaPrincipala");
         }
 
-        public IActionResult About()
+        public HomeController()
         {
-            ViewData["Message"] = "Your application description page.";
 
-            return View();
         }
 
-        public IActionResult Contact()
+      public ActionResult CautaCarte()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            return View("CautaCarte");
         }
 
-        public IActionResult Privacy()
+        public ActionResult AfisareCartiUser()
         {
-            return View();
+            return View("AfisareCartiUser");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
