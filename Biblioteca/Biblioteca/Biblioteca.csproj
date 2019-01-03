@@ -56,6 +56,10 @@
     <Compile Include="Comenzi\ProcesatorCautaCarte.cs" />
     <Compile Include="Comenzi\ProcesatorComanda.cs" />
     <Compile Include="Comenzi\ProcesatorComandaGeneric.cs" />
+    <Compile Include="Comenzi\ProcesatorImprumutareCarte.cs" />
+    <Compile Include="Comenzi\ProcesatorPrelungireTermen.cs" />
+    <Compile Include="Comenzi\ProcesatorRestituireCarte.cs" />
+    <Compile Include="Comenzi\ProcesatorRezervareCarte.cs" />
     <Compile Include="Evenimente\Eveniment.cs" />
     <Compile Include="Evenimente\MagistralaEvenimente.cs" />
     <Compile Include="Evenimente\ProcesatorEvenimente.cs" />

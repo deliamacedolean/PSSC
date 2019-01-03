@@ -10,11 +10,11 @@ namespace Biblioteca.Comenzi
     {
         public static void InregistreazaProcesatoareStandard(this MagistralaComenzi magistrala)
         {
-            magistrala.InregistreazaProcesator(new ProcesatorAdaugaProdus());
-            magistrala.InregistreazaProcesator(new ProcesatorCautaProdus());
-            magistrala.InregistreazaProcesator(new ProcesatorEditeazaProdus());
-            magistrala.InregistreazaProcesator(new ProcesatorStergeProdus());
-            magistrala.InregistreazaProcesator(new ProcesatorVindeProdus());
+            magistrala.InregistreazaProcesator(new ProcesatorImprumutareCarte());
+            magistrala.InregistreazaProcesator(new ProcesatorCautaCarte());
+            magistrala.InregistreazaProcesator(new ProcesatorPrelungireTermen());
+            magistrala.InregistreazaProcesator(new ProcesatorRestituireCarte());
+            magistrala.InregistreazaProcesator(new ProcesatorRezervareCarte());
         }
     }
 }

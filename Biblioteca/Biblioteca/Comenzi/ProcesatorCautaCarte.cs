@@ -13,7 +13,7 @@ namespace Biblioteca.Comenzi
 
             var read = new ReadRepository();
 
-            var gasit = read.CautaProdus("18");   /////!!!!
+            var gasit = read.CautaCarte(18);
 
 
         }

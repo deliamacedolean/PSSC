@@ -29,7 +29,7 @@ namespace Biblioteca.Evenimente
                 }
                 else
                 {
-                    Trace.TraceInformation("Nu exista procesator pentru {0}", eveniment.Tip);
+                    //nu exista procesator
                 }
             }
             else
