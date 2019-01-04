@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EvidentaCarti.Modele
 {
-    class Carte
+    public class Carte
     {
         public int Id { get; private set; }
         public string Titlu { get; private set; }
@@ -15,8 +15,8 @@ namespace EvidentaCarti.Modele
         public int Termen { get; private set; } 
         public DateTime DataImprumut { get; private set; }
         public string Domeniu { get; private set; }
-        public Locatie Locatie { get; private set; }
-        public StareCarte Stare { get; private set; }
+        public Locatie Locatie { get; set; }
+        public StareCarte Stare { get;  set; }
 
 
 

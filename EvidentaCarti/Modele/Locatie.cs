@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EvidentaCarti.Modele
 {
-    class Locatie
+    public class Locatie
     {
         public int Etaj { get; set; }
         public int Raft { get; set; }

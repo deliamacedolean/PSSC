@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EvidentaCarti.Modele
 {
-    class User
+   public  class User
     {
         public string CNP { get; private set; }
 

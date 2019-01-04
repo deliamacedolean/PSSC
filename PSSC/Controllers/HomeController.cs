@@ -12,16 +12,19 @@ namespace PSSC.Controllers
     {
         public IActionResult Index()
         {
-            //return View("Login");
-             return View("PaginaPrincipala");
+           return View("Login");
+            // return View("PaginaPrincipala");
         }
 
         public HomeController()
         {
 
         }
-
-      public ActionResult CautaCarte()
+        public ActionResult PaginaPrincipala()
+        {
+            return View();
+        }
+        public ActionResult CautaCarte()
         {
             return View("CautaCarte");
         }
@@ -35,6 +38,24 @@ namespace PSSC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public ActionResult Login(User model)
+        {
+
+            if(ModelState.IsValid)
+            {
+                if(model.IsValid())
+                {
+                    return RedirectToAction("PaginaPrincipala");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Login data is incorrect!");
+                }
+            }
+            return View(model);
         }
     }
 }

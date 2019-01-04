@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EvidentaCarti.Modele;
 
 namespace PSSC.Models
 {
@@ -15,28 +16,24 @@ namespace PSSC.Models
         public int Termen { get; private set; }
         public DateTime DataImprumut { get; private set; }
         public string Domeniu { get; private set; }
-        //  public Locatie Locatie { get; private set; }
-        //  public Stare Stare { get; private set; }
+        public Locatie Locatie { get;  set; }
+        public StareCarte Stare { get; set; }
 
-        public CarteMVC()
+
+
+        public CarteMVC(int id, string titlu, string autor, string editura, int termen, DateTime dataImprumut, string domeniu, Locatie locatie, StareCarte stare)
         {
+            Id = id;
+            Autor = autor;
+            Titlu = titlu;
+            Editura = editura;
+            Termen = termen;
+            DataImprumut = dataImprumut;
+            Domeniu = domeniu;
+            Locatie = locatie;
+            Stare = stare;
 
         }
-
-
-        //public CarteMVC(int id, string titlu, string autor, string editura, int termen, DateTime dataImprumut, string domeniu, Locatie locatie, StareCarte stare)
-        //{
-        //    Id = id;
-        //    Autor = autor;
-        //    Titlu = titlu;
-        //    Editura = editura;
-        //    Termen = termen;
-        //    DataImprumut = dataImprumut;
-        //    Domeniu = domeniu;
-        //    Locatie = locatie;
-        //    Stare = stare;
-
-        //}
     }
 }
 

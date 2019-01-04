@@ -9,9 +9,12 @@
 @using (Html.BeginForm("Login", "Home"))
 {
 
+    
     <div>
         <fieldset>
             <legend>Login</legend>
+            @Html.ValidationSummary(true, "Login failed. Check your login details.")
+
             <div class="editor-label">
                 @Html.LabelFor(u => u.CNP)
             </div>
@@ -26,10 +29,11 @@
                 @Html.PasswordFor(u => u.Password)
                 @Html.ValidationMessageFor(u => u.Password)
             </div>
+            <br />
             <input type="submit" value="Log In" />
         </fieldset>
     </div>
 
-    @Html.ValidationSummary(true, "Login failed. Check your login details.");
+
 }
 

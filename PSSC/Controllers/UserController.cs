@@ -29,28 +29,28 @@ namespace PSSC.Controllers
             return View("HomePage");
         }
 
-        [HttpPost]
-        public ActionResult Login(Models.User user)
-        {
-            if (ModelState.IsValid)
-            {
-                if (user.IsValid(user.CNP, user.Password))
-                {
+        //[HttpPost]
+        //public ActionResult Login(Models.User user)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (user.IsValid(user.CNP, user.Password))
+        //        {
 
-                  //  FormsAuthentication.SetAuthCookie(user.CNP, user.RememberMe);
-                    return RedirectToAction("HomePage");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Login data is incorrect!");
-                }
-            }
-            return View(user);
-        }
-        public ActionResult Logout()
-        {
-          //  FormsAuthentication.SignOut();
-            return RedirectToAction("HomePage", "Home");
-        }
+        //          //  FormsAuthentication.SetAuthCookie(user.CNP, user.RememberMe);
+        //            return RedirectToAction("HomePage");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "Login data is incorrect!");
+        //        }
+        //    }
+        //    return View(user);
+        //}
+        //public ActionResult Logout()
+        //{
+        //  //  FormsAuthentication.SignOut();
+        //    return RedirectToAction("HomePage", "Home");
+        //}
     }
 }

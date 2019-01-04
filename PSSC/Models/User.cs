@@ -20,9 +20,9 @@ namespace PSSC.Models
         public string Password { get; set; }
 
 
-        public bool IsValid(string _cnp, string _password)
+        public bool IsValid()
         {
-            //return true;
+         //  return true;
 
             using (StreamReader sr = new StreamReader("user.txt"))
             {
@@ -33,13 +33,10 @@ namespace PSSC.Models
 
                     var cnp = splitLine[0];
                     var password = splitLine[1];
-                    if (_cnp.Equals(cnp) && _password.Equals(password))
+                    if (CNP.Equals(cnp) && Password.Equals(password))
                     {
                         return true;
                     }
-
-
-
                 }
             }
             return false;
