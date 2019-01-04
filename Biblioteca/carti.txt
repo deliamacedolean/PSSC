@@ -1,0 +1,6 @@
+1;Harap-Alb;Ion Creanga;Litera;30;0;Literatura;2,1;Neimprumutata;
+5;Baltagul;Mihail Sadoveanu;Art;60;0;Literatura;1,10;Neimprumutata;
+10;Poezii;Mihai Eminescu;Corina;10;0;Literatura;2,9;Neimprumutata;
+51;Romeo si Julieta;William Shakespear;Litera;30;0;Literatura;1,4;Neimprumutata;
+63;Ion;Liviu Rebreanu;Art;60;0;Literatura;2,7;Neimprumutata;
+92;Patul lui Procust;Camil Petrescu;Corina;30;0;Literatura;1,4;Neimprumutata;
