@@ -38,6 +38,7 @@ namespace PSSC.Controllers
         [HttpPost]
         public ActionResult CautaCarte(CautareCartePost model)
         {
+
             return RedirectToAction("GasireCarte");
         }
 
