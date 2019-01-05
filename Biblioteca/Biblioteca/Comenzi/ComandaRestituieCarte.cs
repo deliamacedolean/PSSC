@@ -8,6 +8,6 @@ namespace Biblioteca.Comenzi
 {
     public class ComandaRestituieCarte:Comanda
     {
-        public int ID { get; set; }
+        public override string Titlu { get; set; }
     }
 }

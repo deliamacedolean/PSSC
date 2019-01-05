@@ -9,17 +9,17 @@ namespace Biblioteca.Comenzi
 {
     class ProcesatorRezervareCarte : ProcesatorComandaGeneric<ComandaRezervaCarte>
     {
-        public override void Proceseaza(ComandaRezervaCarte comanda)
+        public override Carte Proceseaza(ComandaRezervaCarte comanda)
         {
-            int id = comanda.ID;
-            ReadRepository read = new ReadRepository();
+            string titlu = comanda.Titlu;
             WriteRepository write = new WriteRepository();
-            Carte c = read.CautaCarte(id);
+            Carte c = ReadRepository.CautaCarte(titlu);
             if (c != null)
             {
                 c.Stare = StareCarte.Rezervata;
                 write.UpdateCarte(c);
             }
+            return null;
         }
     }
 }

@@ -3,67 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Biblioteca.Modele;
+using Biblioteca.Modele.Carti;
 
 namespace Biblioteca.Evenimente
 {
     public class MagistralaEvenimente
     {
-        public static readonly Lazy<MagistralaEvenimente> Instanta = new Lazy<MagistralaEvenimente>(() => new MagistralaEvenimente());
+        public static List<Carte> CartiUser = new List<Carte>();
 
-        private readonly Dictionary<TipEveniment, List<ProcesatorEveniment>> registru = new Dictionary<TipEveniment, List<ProcesatorEveniment>>();
-        private bool inregistrareDeschisa = true;
-
-        private MagistralaEvenimente()
+        static void Process()
         {
-
-        }
-
-        public void Trimite(Eveniment eveniment)
-        {
-            if (!inregistrareDeschisa)
+            for(int i=0;i<CitireEvenimente.events.Count;i++)
             {
-                if (registru.ContainsKey(eveniment.Tip))
-                {
-                    var lista = registru[eveniment.Tip];
-                    lista.ForEach(p => p.Proceseaza(eveniment));
-                }
+                Eveniment e = CitireEvenimente.events[i];
+                ProcesatorEveniment p;
+                if (e.Tip == TipEveniment.ImprumutareCarte)
+                    p = new ProcesatorImprumutareCarte();
+                else if (e.Tip == TipEveniment.PrelungireTermen)
+                    p = new ProcesatorPrelungireTermen();
+                else if (e.Tip == TipEveniment.RestituireCarte)
+                    p = new ProcesatorRestituireCarte();
                 else
-                {
-                    //nu exista procesator
-                }
-            }
-            else
-            {
-                throw new InvalidOperationException();
+                    p = new ProcesatorRezervareCarte();
+
+                p.Proceseaza(e);
+
             }
         }
-
-        public void InregistreazaProcesator(TipEveniment tip, ProcesatorEveniment procesator)
-        {
-            if (inregistrareDeschisa)
-            {
-                List<ProcesatorEveniment> lista = null;
-                if (registru.ContainsKey(tip))
-                {
-                    lista = registru[tip];
-                }
-                else
-                {
-                    lista = new List<ProcesatorEveniment>();
-                    registru.Add(tip, lista);
-                }
-                lista.Add(procesator);
-            }
-            else
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
-        public void InchideInregistrarea()
-        {
-            inregistrareDeschisa = false;
-        }
-
     }
 }

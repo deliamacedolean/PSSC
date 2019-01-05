@@ -4,22 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Biblioteca.Modele.Carti;
+using Biblioteca.Evenimente;
 
 namespace Biblioteca.Comenzi
 {
     class ProcesatorImprumutareCarte : ProcesatorComandaGeneric<ComandaImprumutaCarte>
     {
-        public override void Proceseaza(ComandaImprumutaCarte comanda)
+        public override Carte Proceseaza(ComandaImprumutaCarte comanda)
         {
-            int id = comanda.ID;
-            ReadRepository read = new ReadRepository();
-            WriteRepository write = new WriteRepository();
-            Carte c = read.CautaCarte(id);
-            if(c!=null)
-            {
-                c.Stare = StareCarte.Imprumutata;
-                write.UpdateCarte(c);
-            }
+            Carte c = null;
+            ProcesatorCautaCarte p = new ProcesatorCautaCarte();
+            ComandaCautaCarte cmd = new ComandaCautaCarte();
+            cmd.Titlu = comanda.Titlu;
+            c = p.Proceseaza(cmd);
+            c.Stare = StareCarte.Imprumutata;
+            c.DataImprumut = DateTime.Now;
+
+            MagistralaEvenimente.CartiUser.Add(c);
+            return null;
         }
     }
 }

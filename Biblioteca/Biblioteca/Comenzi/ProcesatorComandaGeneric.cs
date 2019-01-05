@@ -1,12 +1,15 @@
-﻿namespace Biblioteca.Comenzi
+﻿using Biblioteca.Modele.Carti;
+
+namespace Biblioteca.Comenzi
 {
     public abstract class ProcesatorComandaGeneric<T> : ProcesatorComanda where T : Comanda
     {
-        public abstract void Proceseaza(T comanda);
+        public abstract Carte Proceseaza(T comanda);
 
-        public override void Proceseaza(Comanda comanda)
+        public override Carte Proceseaza(Comanda comanda)
         {
             Proceseaza((T)comanda);
+            return null;
         }
     }
 }

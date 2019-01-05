@@ -13,9 +13,14 @@ namespace Biblioteca.Evenimente
         public Guid Id { get; private set; }
         public string IdRadacina { get; private set; }
         public TipEveniment Tip;
-        public object Detalii { get; private set; }
+        public string Detalii { get; private set; }
 
-        public Eveniment(string idRadacina, TipEveniment tipEveniment, object detalii)
+        public string ToString()
+        {
+            return Id + ";" + IdRadacina + ";" + Tip.ToString() + ";" + Detalii;
+        }
+
+        public Eveniment(string idRadacina, TipEveniment tipEveniment, string detalii)
         {
             Tip = tipEveniment;
             IdRadacina = idRadacina;
@@ -23,7 +28,7 @@ namespace Biblioteca.Evenimente
             Id = Guid.NewGuid();
         }
 
-        public EvenimentGeneric<T> ToGeneric<T>()
+        /*public EvenimentGeneric<T> ToGeneric<T>()
         {
             EvenimentGeneric<T> eveniment = null;
             if (Detalii is T)
@@ -49,8 +54,7 @@ namespace Biblioteca.Evenimente
             : base(idRadacina, tipEveniment, detalii)
         {
         }
-
-        public new T Detalii { get => (T)base.Detalii; }
+        */
     }
 
 }

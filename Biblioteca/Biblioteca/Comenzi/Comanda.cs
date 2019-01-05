@@ -8,5 +8,6 @@ namespace Biblioteca.Comenzi
 {
     public abstract class Comanda
     {
+        public virtual string Titlu { get; set; }
     }
 }

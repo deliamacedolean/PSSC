@@ -10,20 +10,19 @@ namespace Biblioteca
 {
     public class ReadRepository
     {
-        public Carte CautaCarte(int idRadacina)
+        public static List<Carte> lista = new List<Carte>();
+
+        public static Carte CautaCarte(string titlu)
         {
-            List<Carte> lista = new List<Carte>();
-            lista = CitesteCarti();
             for (int i = 0; i < lista.Count; i++)
-                if (lista[i].Id == idRadacina && lista[i].Stare==StareCarte.Neimprumutata)
+                if (lista[i].Titlu == titlu)
                     return lista[i];
             return null;
         }
 
-        public List<Carte> CitesteCarti()
+        public static void CitesteCarti()
         {
             //citire din fisier
-            List<Carte> lista = new List<Carte>();
             StreamReader sr =new StreamReader("C:\\Users\\Cosmina\\Desktop\\Biblioteca\\carti.txt");
             string linie;
             char separator1 = ';';
@@ -54,7 +53,6 @@ namespace Biblioteca
                 Carte c = new Carte(id, titlu, autor, editura, termen, data, domeniu, l, stare);
                 lista.Add(c);
             }
-            return lista;
         }
     }
 }

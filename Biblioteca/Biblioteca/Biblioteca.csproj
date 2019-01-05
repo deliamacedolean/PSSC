@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitireEvenimente.cs" />
     <Compile Include="Comenzi\Comanda.cs" />
     <Compile Include="Comenzi\ComandaCautaCarte.cs" />
     <Compile Include="Comenzi\ComandaImprumutaCarte.cs" />
@@ -63,6 +64,10 @@
     <Compile Include="Evenimente\Eveniment.cs" />
     <Compile Include="Evenimente\MagistralaEvenimente.cs" />
     <Compile Include="Evenimente\ProcesatorEvenimente.cs" />
+    <Compile Include="Evenimente\ProcesatorImprumutareCarte.cs" />
+    <Compile Include="Evenimente\ProcesatorPrelungireTermen.cs" />
+    <Compile Include="Evenimente\ProcesatorRestituireCarte.cs" />
+    <Compile Include="Evenimente\ProcesatorRezervareCarte.cs" />
     <Compile Include="Evenimente\TipEveniment.cs" />
     <Compile Include="Modele\Carti\Carte.cs" />
     <Compile Include="Modele\Carti\Locatie.cs" />
@@ -71,6 +76,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadRepository.cs" />
+    <Compile Include="SalvareEveniment.cs" />
     <Compile Include="WriteRepository.cs" />
   </ItemGroup>
   <ItemGroup>

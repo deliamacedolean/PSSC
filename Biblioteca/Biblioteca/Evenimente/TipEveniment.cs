@@ -8,7 +8,6 @@ namespace Biblioteca.Evenimente
 {
     public enum TipEveniment
     {
-        CautareCarte,
         ImprumutareCarte,
         PrelungireTermen,
         RestituireCarte,

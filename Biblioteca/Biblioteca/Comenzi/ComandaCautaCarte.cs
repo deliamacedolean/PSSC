@@ -9,6 +9,6 @@ namespace Biblioteca.Comenzi
 {
     public class ComandaCautaCarte : Comanda
     {
-        public string Titlu { get; set; }
+        public override string Titlu { get; set; }
     }
 }

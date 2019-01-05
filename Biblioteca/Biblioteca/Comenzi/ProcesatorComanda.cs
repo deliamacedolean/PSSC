@@ -1,7 +1,9 @@
-﻿namespace Biblioteca.Comenzi
+﻿using Biblioteca.Modele.Carti;
+
+namespace Biblioteca.Comenzi
 {
     public abstract class ProcesatorComanda
     {
-        public abstract void Proceseaza(Comanda comanda);
+        public abstract Carte Proceseaza(Comanda comanda);
     }
 }

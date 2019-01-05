@@ -8,21 +8,39 @@ namespace Biblioteca.Comenzi
 {
     public class MagistralaComenzi
     {
-        public static readonly Lazy<MagistralaComenzi> Instanta = new Lazy<MagistralaComenzi>(() => new MagistralaComenzi());
-
-        private readonly Dictionary<Type, ProcesatorComanda> registru = new Dictionary<Type, ProcesatorComanda>();
-
-        private MagistralaComenzi() { }
-
-        public void InregistreazaProcesator<T>(ProcesatorComandaGeneric<T> procesator) where T : Comanda
+        public static void Executa(string tip, string titlu)
         {
-            registru.Add(typeof(T), procesator);
-        }
+            ProcesatorComanda pc;
+            Comanda c;
 
-        public void Trimite<T>(T comanda) where T : Comanda
-        {
-            var procesator = registru[typeof(T)];
-            procesator.Proceseaza(comanda);
+            if (tip == "cauta")
+            {
+                pc = new ProcesatorCautaCarte();
+                c = new ComandaCautaCarte();
+            }
+            else if (tip == "imprumutare")
+            {
+                c = new ComandaImprumutaCarte();
+                pc = new ProcesatorImprumutareCarte();
+            }
+            else if (tip == "prelungire")
+            {
+                c = new ComandaPrelungireTermen();
+                pc = new ProcesatorPrelungireTermen();
+            }
+            else if (tip == "rezervare")
+            {
+                c = new ComandaRezervaCarte();
+                pc = new ProcesatorRezervareCarte();
+            }
+            else
+            {
+                c = new ComandaRestituieCarte();
+                pc = new ProcesatorRestituireCarte();
+            }
+
+            c.Titlu = titlu;
+            pc.Proceseaza(c);
         }
     }
 }
