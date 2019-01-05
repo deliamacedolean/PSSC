@@ -34,6 +34,9 @@ namespace PSSC.Models
             Stare = stare;
 
         }
+
+
+
     }
 }
 

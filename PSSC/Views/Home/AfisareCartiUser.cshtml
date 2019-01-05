@@ -1,28 +1,102 @@
-﻿
+﻿@model IEnumerable<PSSC.Models.CarteMVC>
 @{
     ViewData["Title"] = "AfisareStareUser";
 }
 
 <h2>Afisare carti user</h2>
+<br />
+<br />
 
 <div>
-    <table border="1" cellpadding="10" cellspacing="10">
+    @*<table border="1" cellpadding="10" cellspacing="10">
         <tr>
-            <th>Titlu</th>
-            <th>Autor</th>
-            <th>Editura</th>
-            <th>Termen</th>
-            <th>Data imprumutului</th>
-        </tr>
-        <tr>
-            <td>sff</td>
-            <td>fe</td>
-            <td>Politehnica</td>
-            <td>1 luna</td>
-            <td>10.12.2018</td>
+            <td align="center" width="20%"><b>Titlu</b></td>
+            <td align="center" width="20%"><b>Autor</b></td>
+            <td align="center" width="20%"><b>Editura</b></td>
+            <th align="center" width="20%">Termen(saptamani)</th>
+            <th align="center" width="20%">Data imprumutului</th>
         </tr>
 
+        
+
+    <tr>
+        <td align="center">sff</tdalign="center">
+        <td align="center">fe</td>
+        <td align="center">Politehnica</td>
+        <td align="center">4</td>
+        <td align="center">10.12.2018</td>
+    </tr>
+
+    </table>*@
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titlu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Editura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Termen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataImprumut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domeniu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Locatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stare)
+            </th>
+
+        </tr>
+
+        @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titlu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Editura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Termen)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataImprumut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Locatie)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stare)
+                </td>
+
+            </tr>
+        }*@
     </table>
 </div>
+
+
+
 
 

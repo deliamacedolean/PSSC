@@ -10,23 +10,44 @@ namespace PSSC.Controllers
 {
     public class HomeController : Controller
     {
+
+        List<CarteMVC> carteMVC = new List<CarteMVC>();
         public IActionResult Index()
         {
-           return View("Login");
-            // return View("PaginaPrincipala");
+            return View("Login");
+            //return View("PaginaPrincipala");
         }
 
         public HomeController()
         {
-
+            
         }
+
+        
         public ActionResult PaginaPrincipala()
         {
             return View();
         }
+
         public ActionResult CautaCarte()
         {
             return View("CautaCarte");
+        }
+
+
+        [HttpPost]
+        public ActionResult CautaCarte(CautareCartePost model)
+        {
+            return RedirectToAction("GasireCarte");
+        }
+
+
+
+        [HttpPost]
+        public ActionResult GasireCarte(CautareCartePost model)
+        {
+            return View();
+
         }
 
         public ActionResult AfisareCartiUser()
@@ -57,5 +78,10 @@ namespace PSSC.Controllers
             }
             return View(model);
         }
+
+
+       
+
+
     }
 }

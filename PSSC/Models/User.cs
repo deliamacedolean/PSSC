@@ -22,7 +22,6 @@ namespace PSSC.Models
 
         public bool IsValid()
         {
-         //  return true;
 
             using (StreamReader sr = new StreamReader("user.txt"))
             {
@@ -41,5 +40,7 @@ namespace PSSC.Models
             }
             return false;
         }
+
+        
     }
 }

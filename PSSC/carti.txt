@@ -1,0 +1,3 @@
+﻿1;Introducere in C#;Mihai Popescu;Politehnica;4;20/12/2018;IT;1/5;imprumutata
+2;Introducere in Java;Ion Mihailescu;Politehnica;8;20/10/2018;IT;1/7;neimprumutata
+5;Codul lui Da Vinci;Dan Brown;Rao;6;03/01/2019;Beletristica;3/10;rezervata

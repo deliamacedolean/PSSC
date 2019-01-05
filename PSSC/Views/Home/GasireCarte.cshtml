@@ -1,0 +1,31 @@
+﻿
+@model PSSC.Models.CarteMVC
+@{
+    ViewData["Title"] = "GasireCarte";
+}
+
+<h2>GasireCarte</h2>
+
+<br />
+<br />
+
+
+@using (Html.BeginForm("ImprumutaCarte", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Imprumuta carte">
+}
+<br />
+
+@using (Html.BeginForm("RestituieCarte", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Restituie carte">
+}
+<br />
+
+@using (Html.BeginForm("PrelungireTermen", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Prelungire termen">
+}
+<br />
+
+
