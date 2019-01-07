@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EvidentaCarti.Modele;
+//using EvidentaCarti.Modele;
+using Biblioteca.Modele.Carti;
+using Biblioteca.Comenzi;
 
 namespace PSSC.Models
 {

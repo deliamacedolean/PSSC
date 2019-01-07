@@ -8,10 +8,11 @@ namespace Biblioteca.Comenzi
 {
     public class MagistralaComenzi
     {
-        public static void Executa(string tip, string titlu)
+        public static object Executa(string tip, string titlu) // TODO DELIA void -> object
         {
-            ProcesatorComanda pc;
-            Comanda c;
+            ProcesatorComanda pc = null; // TODO DELIA am pus pe null
+            Comanda c = null;
+
 
             if (tip == "cauta")
             {
@@ -33,14 +34,19 @@ namespace Biblioteca.Comenzi
                 c = new ComandaRezervaCarte();
                 pc = new ProcesatorRezervareCarte();
             }
-            else
+            else if (tip == "restituire")
             {
                 c = new ComandaRestituieCarte();
                 pc = new ProcesatorRestituireCarte();
             }
 
-            c.Titlu = titlu;
-            pc.Proceseaza(c);
+
+            if (pc != null)             // TODO DELIA return
+            {
+                c.Titlu = titlu;
+                return pc.Proceseaza(c); 
+            }
+            return null;
         }
     }
 }

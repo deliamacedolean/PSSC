@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Biblioteca.Modele.Carti;
 using Biblioteca.Evenimente;
+using Biblioteca;
 
 namespace Biblioteca.Comenzi
 {
@@ -21,7 +22,9 @@ namespace Biblioteca.Comenzi
             c.DataImprumut = DateTime.Now;
 
             MagistralaEvenimente.CartiUser.Add(c);
-            return null;
+            Eveniment e = new Eveniment(c.Id.ToString(), TipEveniment.ImprumutareCarte, c.Titlu);
+            SalvareEveniment.Write(e);
+            return null;                            // trebuie verificat daca cartea e deja imprumutata
         }
     }
 }

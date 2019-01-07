@@ -23,7 +23,7 @@ namespace Biblioteca
         public static void CitesteCarti()
         {
             //citire din fisier
-            StreamReader sr =new StreamReader("C:\\Users\\Cosmina\\Desktop\\Biblioteca\\carti.txt");
+            StreamReader sr =new StreamReader("C:\\Users\\Cosmina\\Desktop\\PSSC-master\\Biblioteca\\carti.txt");
             string linie;
             char separator1 = ';';
             char separator2 = ',';
@@ -37,7 +37,7 @@ namespace Biblioteca
                 int termen = int.Parse(s[4]);
                 DateTime data = new DateTime();
                 if (s[5] == "0")
-                    data = Convert.ToDateTime("01-01-1900");
+                    data = DateTime.Now;
                 string domeniu = s[6];
                 string[] s1 = s[7].Split(separator2);
                 int etaj = int.Parse(s1[0]);
@@ -52,7 +52,9 @@ namespace Biblioteca
                     stare = StareCarte.Rezervata;
                 Carte c = new Carte(id, titlu, autor, editura, termen, data, domeniu, l, stare);
                 lista.Add(c);
+
             }
+            sr.Close();  // TODO DELIA 
         }
     }
 }

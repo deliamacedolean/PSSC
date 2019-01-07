@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Biblioteca.Evenimente;
 using Biblioteca.Modele.Carti;
 
 namespace Biblioteca.Comenzi
@@ -11,14 +12,17 @@ namespace Biblioteca.Comenzi
     {
         public override Carte Proceseaza(ComandaRezervaCarte comanda)
         {
-            string titlu = comanda.Titlu;
-            WriteRepository write = new WriteRepository();
-            Carte c = ReadRepository.CautaCarte(titlu);
-            if (c != null)
-            {
-                c.Stare = StareCarte.Rezervata;
-                write.UpdateCarte(c);
-            }
+            Carte c = null;
+            ProcesatorCautaCarte p = new ProcesatorCautaCarte();
+            ComandaCautaCarte cmd = new ComandaCautaCarte();
+            cmd.Titlu = comanda.Titlu;
+            c = p.Proceseaza(cmd);
+            c.Stare = StareCarte.Rezervata;
+           
+            MagistralaEvenimente.CartiUser.Add(c);
+            
+            Eveniment e = new Eveniment(c.Id.ToString(), TipEveniment.RezervareCarte, c.Titlu);
+            SalvareEveniment.Write(e);
             return null;
         }
     }

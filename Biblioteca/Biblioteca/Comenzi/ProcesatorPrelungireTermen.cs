@@ -24,6 +24,8 @@ namespace Biblioteca.Comenzi
                 if (MagistralaEvenimente.CartiUser[i].Titlu == comanda.Titlu)
                     MagistralaEvenimente.CartiUser[i] = c;
             }
+            Eveniment e = new Eveniment(c.Id.ToString(), TipEveniment.PrelungireTermen, c.Titlu);
+            SalvareEveniment.Write(e);
             return null;
         }
     }

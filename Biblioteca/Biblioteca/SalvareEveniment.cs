@@ -10,11 +10,19 @@ namespace Biblioteca
 {
     class SalvareEveniment
     {
-        public StreamWriter sw = new StreamWriter("C:\\Users\\Cosmina\\Desktop\\Biblioteca\\evenimente.txt");
+        public static StreamWriter sw;
+        public static StreamReader sr;
 
-        public void Write(Eveniment e)
+        public static async void Write(Eveniment e)
         {
+            sr = new StreamReader("C:\\Users\\Cosmina\\Desktop\\PSSC-master\\Biblioteca\\evenimente.txt");
+            string s;
+            s = sr.ReadToEnd();
+            sr.Close();
+            sw = new StreamWriter("C:\\Users\\Cosmina\\Desktop\\PSSC-master\\Biblioteca\\evenimente.txt");
+            sw.Write(s);
             sw.WriteLine(e.ToString());
+            sw.Close();
         }
     }
 }

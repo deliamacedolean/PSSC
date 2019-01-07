@@ -8,8 +8,8 @@ namespace Biblioteca.Comenzi
 
         public override Carte Proceseaza(Comanda comanda)
         {
-            Proceseaza((T)comanda);
-            return null;
+            return Proceseaza((T)comanda); // TODO DELIA return
+           
         }
     }
 }

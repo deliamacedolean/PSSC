@@ -3,29 +3,36 @@
 @{
     ViewData["Title"] = "GasireCarte";
 }
-
 <h2>GasireCarte</h2>
-
+Titlu: @Model.Titlu  <br />
+Autor: @Model.Autor     <br />
+Editura: @Model.Editura<br />
+Termen: @Model.Termen<br />
 <br />
 <br />
 
-
-@using (Html.BeginForm("ImprumutaCarte", "Home", new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("ImprumutaCarte", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    <input type="hidden" name="Titlu" value="@Model.Titlu" />
     <input type="submit" value="Imprumuta carte">
 }
 <br />
-
 @using (Html.BeginForm("RestituieCarte", "Home", new { enctype = "multipart/form-data" }))
 {
-    <input type="submit" value="Restituie carte">
+    <input type="hidden" name="Titlu" value="@Model.Titlu" />
+    <input type="submit" value="Restituie carte/Anularea rezervare">
 }
 <br />
-
-@using (Html.BeginForm("PrelungireTermen", "Home", new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("PrelungireCarte", "Home", new { enctype = "multipart/form-data" }))
 {
+    <input type="hidden" name="Titlu" value="@Model.Titlu" />
     <input type="submit" value="Prelungire termen">
 }
 <br />
-
+@using (Html.BeginForm("RezervareCarte", "Home", new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="Titlu" value="@Model.Titlu" />
+    <input type="submit" value="Rezervare carte">
+}
+<br />
 

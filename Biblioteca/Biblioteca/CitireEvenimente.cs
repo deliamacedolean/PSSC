@@ -10,34 +10,33 @@ namespace Biblioteca
 {
     class CitireEvenimente
     {
-        public StreamReader sr = new StreamReader("C:\\Users\\Cosmina\\Desktop\\Biblioteca\\evenimente.txt");
+        public static StreamReader sr = new StreamReader("C:\\Users\\Cosmina\\Desktop\\PSSC-master\\Biblioteca\\evenimente.txt");
         public static List<Eveniment> events = new List<Eveniment>();
 
-        public List<Eveniment> Citeste()
+        public static void Citeste()
         {
             string line = null;
             while((line = sr.ReadLine())!=null)
             {
                 string[] s = line.Split(';');
-                Guid id = Guid.Parse(s[0]);
-                string idRadacina = s[1];
+                string idRadacina = s[0];
                 TipEveniment t;
                 
-                if (s[2] == "ImprumutareCarte")
+                if (s[1] == "ImprumutareCarte")
                     t = TipEveniment.ImprumutareCarte;
-                else if (s[2] == "PrelungireTermen")
+                else if (s[1] == "PrelungireTermen")
                     t = TipEveniment.PrelungireTermen;
-                else if (s[2] == "RestituireCarte")
+                else if (s[1] == "RestituireCarte")
                     t = TipEveniment.RestituireCarte;
                 else
                     t = TipEveniment.RezervareCarte;
 
-                string detalii = s[3];
+                string detalii = s[2];
 
                 Eveniment e = new Eveniment(idRadacina, t, detalii);
                 events.Add(e);
             }
-            return events;
+            sr.Close();
         }
     }
 }

@@ -12,8 +12,9 @@ namespace Biblioteca.Evenimente
     {
         public static List<Carte> CartiUser = new List<Carte>();
 
-        static void Process()
+        public static void Process()
         {
+            CitireEvenimente.Citeste();
             for(int i=0;i<CitireEvenimente.events.Count;i++)
             {
                 Eveniment e = CitireEvenimente.events[i];

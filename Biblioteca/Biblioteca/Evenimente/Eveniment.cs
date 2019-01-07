@@ -17,7 +17,7 @@ namespace Biblioteca.Evenimente
 
         public string ToString()
         {
-            return Id + ";" + IdRadacina + ";" + Tip.ToString() + ";" + Detalii;
+            return IdRadacina + ";" + Tip.ToString() + ";" + Detalii;
         }
 
         public Eveniment(string idRadacina, TipEveniment tipEveniment, string detalii)
@@ -28,33 +28,6 @@ namespace Biblioteca.Evenimente
             Id = Guid.NewGuid();
         }
 
-        /*public EvenimentGeneric<T> ToGeneric<T>()
-        {
-            EvenimentGeneric<T> eveniment = null;
-            if (Detalii is T)
-            {
-                eveniment = new EvenimentGeneric<T>(this.IdRadacina, this.Tip, (T)Detalii);
-            }
-            else if (Detalii is JObject)
-            {
-                var detalii = ((JObject)this.Detalii).ToObject<T>();
-                eveniment = new EvenimentGeneric<T>(this.IdRadacina, this.Tip, detalii);
-            }
-            else
-            {
-                throw new InvalidCastException();
-            }
-            return eveniment;
-        }
-    }
-
-    public class EvenimentGeneric<T> : Eveniment
-    {
-        public EvenimentGeneric(string idRadacina, TipEveniment tipEveniment, T detalii)
-            : base(idRadacina, tipEveniment, detalii)
-        {
-        }
-        */
     }
 
 }

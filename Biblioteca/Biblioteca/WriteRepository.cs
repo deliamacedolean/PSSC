@@ -18,7 +18,7 @@ namespace Biblioteca
         {
             string linie = "";
             linie = linie + c.Id + ";" + c.Titlu + ";" + c.Autor + ";" + c.Editura + ";" + c.Termen + ";" + c.DataImprumut + ";" + c.Locatie.Etaj + "," + c.Locatie.Raft + ";" + c.Stare + ";";
-            StreamReader sr = new StreamReader("C:\\Users\\Cosmina\\Desktop\\Biblioteca\\carti.txt");
+            StreamReader sr = new StreamReader("C:\\Users\\Cosmina\\Desktop\\PSSC-master\\Biblioteca\\carti.txt");
             List<string> str = new List<string>();
             string l;
             while((l=sr.ReadLine())!=null)
@@ -29,11 +29,13 @@ namespace Biblioteca
                 else
                     str.Add(l);
             }
-            StreamWriter sw = new StreamWriter("C:\\Users\\Cosmina\\Desktop\\Biblioteca\\carti.txt");
+            sr.Close();  // TODO DELIA
+            StreamWriter sw = new StreamWriter("C:\\Users\\Cosmina\\Desktop\\PSSC-master\\Biblioteca\\carti.txt");
             for(int i=0;i<str.Count;i++)
             {
                 sw.WriteLine(str[i]);
             }
+            sw.Close(); // TODO DELIA
             return true;
         }
 

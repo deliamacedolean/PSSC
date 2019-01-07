@@ -1,0 +1,6 @@
+1;ImprumutareCarte;Harap-Alb
+10;ImprumutareCarte;Poezii
+5;ImprumutareCarte;Baltagul
+0;RestituireCarte;Poezii
+1;PrelungireTermen;Harap-Alb
+0;RestituireCarte;Baltagul
